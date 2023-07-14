@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "https://wep-auth.svc-api.com/static/css/main.c2286bd2.chunk.css",
+    "main.js": "https://wep-auth.svc-api.com/static/js/main.f41fa702.chunk.js",
+    "main.js.map": "https://wep-auth.svc-api.com/static/js/main.f41fa702.chunk.js.map",
+    "runtime-main.js": "https://wep-auth.svc-api.com/static/js/runtime-main.4741f082.js",
+    "runtime-main.js.map": "https://wep-auth.svc-api.com/static/js/runtime-main.4741f082.js.map",
+    "static/js/2.2c13c830.chunk.js": "https://wep-auth.svc-api.com/static/js/2.2c13c830.chunk.js",
+    "static/js/2.2c13c830.chunk.js.map": "https://wep-auth.svc-api.com/static/js/2.2c13c830.chunk.js.map",
+    "static/js/3.53727613.chunk.js": "https://wep-auth.svc-api.com/static/js/3.53727613.chunk.js",
+    "static/js/3.53727613.chunk.js.map": "https://wep-auth.svc-api.com/static/js/3.53727613.chunk.js.map",
+    "index.html": "https://wep-auth.svc-api.com/index.html",
+    "static/css/main.c2286bd2.chunk.css.map": "https://wep-auth.svc-api.com/static/css/main.c2286bd2.chunk.css.map",
+    "static/js/2.2c13c830.chunk.js.LICENSE.txt": "https://wep-auth.svc-api.com/static/js/2.2c13c830.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4741f082.js",
+    "static/js/2.2c13c830.chunk.js",
+    "static/css/main.c2286bd2.chunk.css",
+    "static/js/main.f41fa702.chunk.js"
+  ]
+}

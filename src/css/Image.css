@@ -1,0 +1,34 @@
+.disp-img_hmt-logo {
+  text-align: center;
+}
+
+.disp-img_hmt-logo img {
+  background-repeat: no-repeat;                /* 画像の繰り返しを指定  */              
+  /* object-fit: cover */
+  width: 70px;
+  height: auto;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+
+#logo1{
+  animation:3s linear infinite rotation1;
+}
+#logo2{
+  animation:3s linear infinite rotation2;
+}
+#logo3{
+  animation:4.5s linear infinite rotation3;
+}
+@keyframes rotation1{
+  0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
+}
+@keyframes rotation2{
+  0%{ transform:rotateX(0);}
+  100%{ transform:rotateX(360deg); }
+}
+@keyframes rotation3{
+  0%{ transform:rotateY(0);}
+  30%{ transform:rotateY(360deg); }
+}

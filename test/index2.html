@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+	<iframe name="wep-auth" id="wep-auth" title="wep-auth" width="400" height="600" src="https://dev.wep-auth.svc-api.com/index.html?client=svc">WEP-AUTH</iframe>
+<script>
+  // iframe要素を取得
+  var iframeElem = document.getElementsByTagName('iframe')[0];
+  console.log("IFRAME WINDOW", iframeElem.contentWindow)
+  //alert(iframeElem.src);
+
+  window.addEventListener('message', event => {
+    
+    //eventログを見てみる
+    console.log("MESAGE EVENT LISTNNER", event)
+
+    // 実際には適切な origin 判定が必要
+    // ローカルファイルを Chrome でそのまま開くと origin = 'null' になっている
+    if (event.origin !== 'https://dev.wep-auth.svc-api.com') { 
+      return;
+    }
+
+    //wep-authはiframeのname
+    //初回、これが返ってくる→無視
+    if (event.data == "!_{\"h\":\"wep-auth\"}") return
+
+    //子(iframe側)から送信されるデータをメッセージ表示
+    if (event.data) {
+      alert("データが届きました。:" + event.data);  
+    }
+  });
+</script>
+</body>
+</html>

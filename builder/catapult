@@ -1,0 +1,49 @@
+# -l/bin/bash
+
+env=${1:-hoge}
+
+
+if [ "${env}" = "dev" ] || [ "${env}" = "stg" ] || [ "${env}" = "prd" ]; then
+  :
+else
+  echo "Sorry. please 1st arg 'dev' or 'stg' or 'prd'"
+  exit 0
+fi
+
+echo "Are you sure?
+build ${env}-wep-auth
+Yes:1
+No:0"
+read input
+if [ $input = '1' ];then
+  :
+else
+  echo "Sorry.."
+  exit 0
+fi
+
+if [ "${env}" = "dev" ]; then
+  branch=develop
+elif [ "${env}" = "stg" ]; then
+  branch=staging
+else
+  branch=master
+fi
+
+#git branch checkout
+(cd ../ && \
+git checkout ${branch} && \
+git pull)
+
+#source building
+npm run build:${env}
+
+#aws acccess key
+export $(cat ~/.aws/wep-auth-builder-${env} | xargs); 
+
+#upload to s3
+aws s3 cp ../build s3://${env}-wep-auth/contents/build --recursive
+
+echo "
+
+fin.."
